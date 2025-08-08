@@ -1,0 +1,605 @@
+/**
+ * SPPB2文件上传页面样式
+ */
+
+.sppb2-upload-page {
+    padding: 20px;
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+
+/* 页面头部 */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-title i {
+    font-size: 24px;
+    opacity: 0.9;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* 统计卡片 */
+.stats-section {
+    margin-bottom: 24px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
+
+.stat-total .stat-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-pending .stat-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-uploaded .stat-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-failed .stat-icon {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d3748;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #718096;
+    margin-top: 4px;
+}
+
+/* 筛选区域 */
+.filter-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filter-row {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.form-select,
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+}
+
+/* 上传区域 */
+.upload-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.upload-area {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #f7fafc;
+}
+
+.upload-area.drag-over {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.upload-icon {
+    font-size: 48px;
+    color: #a0aec0;
+    margin-bottom: 16px;
+}
+
+.upload-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+.upload-text p {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+}
+
+/* 上传进度 */
+.upload-progress {
+    margin-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.progress-header h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.progress-item {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.file-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #718096;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+}
+
+.progress-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-text {
+    font-size: 12px;
+    color: #718096;
+}
+
+.progress-percent {
+    font-size: 12px;
+    font-weight: 500;
+    color: #667eea;
+}
+
+/* 文件列表 */
+.files-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* 表格样式 */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data-table th {
+    background: #f7fafc;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background: #f7fafc;
+}
+
+/* 状态标签 */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-pending {
+    background: #fef5e7;
+    color: #d69e2e;
+}
+
+.status-uploading {
+    background: #e6fffa;
+    color: #38b2ac;
+}
+
+.status-uploaded {
+    background: #f0fff4;
+    color: #38a169;
+}
+
+.status-failed {
+    background: #fed7d7;
+    color: #e53e3e;
+}
+
+.status-approved {
+    background: #e6fffa;
+    color: #319795;
+}
+
+/* 操作按钮 */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #edf2f7;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #e2e8f0;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* 分页 */
+.pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #718096;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.page-numbers .btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .sppb2-upload-page {
+        padding: 16px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-row {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: auto;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .pagination-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .data-table {
+        font-size: 12px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 12px 8px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card,
+.filter-section,
+.upload-section,
+.files-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 加载状态 */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 复选框样式 */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #667eea;
+}
+
+/* 滚动条样式 */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
