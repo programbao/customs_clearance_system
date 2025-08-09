@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报关系统 - UI 原型</title>
+    <link rel="stylesheet" href="design/main.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>报关系统 - UI 原型 (平铺视图)</h1>
+        <p>所有路由页面内容平铺展示，每个页面占一行。</p>
+    </header>
+
+    <div class="page-container">
+
+        <!-- ================================================================= -->
+        <!-- =======================  出口科 (Export Dept)  ====================== -->
+        <!-- ================================================================= -->
+
+        <section id="export-general" class="page-section">
+            <h2 class="page-title">出口科 (Export Dept) - 一般物资 (General Goods)</h2>
+            <div class="page-content">
+                <!-- Based on 首页_资料整理阶段_-总表.html -->
+                <div class="filters">
+                    <select><option>状态: 全部</option><option>资料整理阶段</option></select>
+                    <input type="text" placeholder="船名">
+                    <input type="text" placeholder="PIC">
+                    <input type="text" placeholder="申报编号">
+                    <select><option>成品类型: 全部</option><option>镍铁</option></select>
+                    <button>查询</button>
+                    <button>重置</button>
+                </div>
+                <div class="toolbar">
+                    <button class="btn-primary">新增出口</button>
+                    <button>导出</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>申报材料编号</th>
+                            <th>船次</th>
+                            <th>状态</th>
+                            <th>清关进度</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PIBA2025073000001</td>
+                            <td>W858</td>
+                            <td>资料整理阶段</td>
+                            <td>30%</td>
+                            <td><a href="#">编辑资料</a> <a href="#">发起草本</a> <a href="#">查看</a> <a href="#">删除</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Based on 首页-明细页面.html -->
+                <div class="details-view">
+                    <h3>新增/编辑视图</h3>
+                    <div class="workflow-steps">
+                        <span>资料整理阶段</span> &gt; <span>待装船许可</span> &gt; <span>...</span>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab-link active">明细</button>
+                        <button class="tab-link">附件列表</button>
+                    </div>
+                    <div class="tab-content">
+                        <h4>CI/PL草本制作</h4>
+                        <form class="details-form">
+                            <label>公司名称:</label><input type="text" value="weda bay nickel">
+                            <label>Invoice To:</label><input type="text" value="HONG KONG RUI PU CO.,LIMITED">
+                            <!-- More fields as per analysis -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="export-special" class="page-section">
+            <h2 class="page-title">出口科 (Export Dept) - 特殊物资 (Special Goods)</h2>
+            <div class="page-content">
+                <!-- Based on 待上传授权信正本.html -->
+                <p>与一般物资类似，但工作流和附件不同。</p>
+                <div class="workflow-steps">
+                    <span>资料整理阶段</span> &gt; <span>待上传授权信正本</span> &gt; <span>...</span>
+                </div>
+                <h4>附件列表</h4>
+                <table class="data-table">
+                     <thead><tr><th>文件名称</th><th>文件</th><th>操作</th></tr></thead>
+                     <tbody>
+                         <tr><td>*授权信草本</td><td>...</td><td><a href="#">上传</a> <a href="#">预览</a></td></tr>
+                         <tr><td>*授权信正本</td><td>...</td><td><a href="#">上传</a> <a href="#">预览</a></td></tr>
+                     </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- =======================  进口科 (Import Dept)  ====================== -->
+        <!-- ================================================================= -->
+
+        <section id="import-data-management" class="page-section">
+            <h2 class="page-title">进口科 (Import Dept) - 资料管理 (Data Management)</h2>
+            <div class="page-content">
+                <!-- Based on 首页_资料整理_.html -->
+                <div class="workflow-steps">
+                    <span>资料整理</span> &gt; <span>资料待确认</span> &gt; <span>待上传PIB核对草本</span> &gt; <span>...</span>
+                </div>
+                <h4>商品/费用明细</h4>
+                 <table class="data-table">
+                    <thead>
+                        <tr><th>DESCRIPTION</th><th>HS CODE</th><th>QUANTITY</th><th>UNIT PRICE</th><th>BM(关税)</th><th>PPN(增值税)</th><th>PPH(所得税)</th><th>合计税率</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>NICKEL ORE</td><td>2604.00.00</td><td>50,000</td><td>50</td><td>0%</td><td>11%</td><td>0%</td><td>11%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="import-summary" class="page-section">
+            <h2 class="page-title">进口科 (Import Dept) - 进口总表 (Import Summary)</h2>
+            <div class="page-content">
+                <p>聚合所有进口项目的数据，提供高级筛选和导出功能。</p>
+                <div class="summary-cards">
+                    <div class="card">本月进口总额: $10,000,000</div>
+                    <div class="card">待处理单据: 5</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- =======================  保税科 (Bonded Dept)  ====================== -->
+        <!-- ================================================================= -->
+
+        <section id="bonded-domestic" class="page-section">
+            <h2 class="page-title">保税科 (Bonded Dept) - 内贸 (Domestic Trade)</h2>
+            <div class="page-content">
+                <!-- Based on 内贸首页.html -->
+                <h4>内贸列表</h4>
+                <table class="data-table">
+                    <thead><tr><th>船号</th><th>合同号</th><th>PIB号</th><th>BC号</th><th>状态</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>W858</td><td>CT202301</td><td>PIB001</td><td>BC40-001</td><td>待上传SPPB1</td><td><a href="#">编辑资料</a> <a href="#">上传SPPB</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="bonded-foreign" class="page-section">
+            <h2 class="page-title">保税科 (Bonded Dept) - 外贸 (Foreign Trade)</h2>
+            <div class="page-content">
+                <!-- Based on 外贸首页.html -->
+                <h4>外贸列表 (BC2.3)</h4>
+                 <table class="data-table">
+                    <thead><tr><th>工作号</th><th>状态</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>FT202301</td><td>待上传盖章版BC2.3</td><td><a href="#">编辑资料</a> <a href="#">上传BC2.3</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- =======================  查验科 (Inspection Dept)  ====================== -->
+        <!-- ================================================================= -->
+        <section id="inspection-export" class="page-section">
+            <h2 class="page-title">查验科 (Inspection Dept) - 出口查验 (Export Inspection)</h2>
+            <div class="page-content">
+                <!-- Based on 首页_确认海关和第三方查验_.html -->
+                <h4>出口查验列表</h4>
+                 <table class="data-table">
+                    <thead><tr><th>工作号</th><th>海关查验</th><th>第三方查验</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>EX20230801-02</td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><a href="#">上传查验照片</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="inspection-import" class="page-section">
+            <h2 class="page-title">查验科 (Inspection Dept) - 进口查验 (Import Inspection)</h2>
+            <div class="page-content">
+                <!-- Based on __spjm.html -->
+                <h4>进口查验列表</h4>
+                <table class="data-table">
+                    <thead><tr><th>工作号</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>IM20230801-01</td><td><a href="#">上传SPJM</a> <a href="#">上传查验照片</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- =======================  运营科 (Operations Dept)  ====================== -->
+        <!-- ================================================================= -->
+        <section id="ops-settlement" class="page-section">
+            <h2 class="page-title">运营科 (Operations Dept) - 结算单 (Settlement)</h2>
+            <div class="page-content">
+                 <!-- Based on 出口服务费结算单-wbn_出口.html -->
+                 <h4>出口结算单</h4>
+                 <div class="invoice-form">
+                     <p>To: HONG KONG RUI PU CO.,LIMITED</p>
+                     <p>Invoice No: 018/CI/WEN/FeNi/V/25(16224)</p>
+                     <table class="data-table">
+                        <thead><tr><th>Description</th><th>Amount</th></tr></thead>
+                        <tbody>
+                            <tr><td>SERVICE FEE FOB MV.QSC PINE VOY.0319B</td><td>8,888.00</td></tr>
+                            <tr><td>Sub Total</td><td>8,888.00</td></tr>
+                            <tr><td>PPN 11%</td><td>977.68</td></tr>
+                            <tr><td>Grand Total</td><td>9,865.68</td></tr>
+                        </tbody>
+                     </table>
+                     <div class="signatures">
+                         <span>创建人: ______</span>
+                         <span>审核人: ______</span>
+                         <span>批准人: ______</span>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- =======================  基础数据 (Basic Data)  ====================== -->
+        <!-- ================================================================= -->
+        <section id="data-company" class="page-section">
+            <h2 class="page-title">基础数据 (Basic Data) - 公司管理 (Company Management)</h2>
+            <div class="page-content">
+                <!-- Based on 新增公司-基本信息.html -->
+                <button class="btn-primary">新增公司</button>
+                <h4>公司列表</h4>
+                <table class="data-table">
+                    <thead><tr><th>公司名称</th><th>简称</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>PT.WEDA BAY NICKEL</td><td>WBN</td><td><a href="#">编辑</a> <a href="#">查看</a></td></tr>
+                    </tbody>
+                </table>
+                 <div class="details-view">
+                    <h3>新增公司向导</h3>
+                    <p>Step 1: 基本信息 (公司全名, 简称, LOGO)</p>
+                    <p>Step 2: 银行账户管理 (银行名称, 账号, SWIFT)</p>
+                    <p>Step 3: 进出口法律文件 (营业执照, 许可证上传)</p>
+                    <p>Step 4: 完成</p>
+                </div>
+            </div>
+        </section>
+        <section id="data-materials" class="page-section">
+            <h2 class="page-title">基础数据 (Basic Data) - 物资管理 (Materials Management)</h2>
+            <div class="page-content">
+                <!-- Based on 物资管理首页.html -->
+                <h4>物资列表</h4>
+                <table class="data-table">
+                    <thead><tr><th>HS CODE</th><th>Description</th><th>BM</th><th>PPN</th><th>PPH</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>2604.00.00</td><td>NICKEL ORE</td><td>0%</td><td>11%</td><td>0%</td><td><a href="#">编辑</a> <a href="#">查看贸易协定</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="data-finished-goods" class="page-section">
+            <h2 class="page-title">基础数据 (Basic Data) - 出口成品管理 (Finished Goods Mgmt)</h2>
+            <div class="page-content">
+                <!-- Based on 首页_6.html -->
+                <h4>出口成品列表</h4>
+                <table class="data-table">
+                    <thead><tr><th>成品中文名</th><th>HS CODE</th><th>出口分类</th><th>操作</th></tr></thead>
+                    <tbody>
+                        <tr><td>镍铁(FERRO-NICKEL)</td><td>72026000</td><td>一般物资</td><td><a href="#">编辑</a> <a href="#">查看</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="data-templates" class="page-section">
+            <h2 class="page-title">基础数据 (Basic Data) - 模版库管理 (Template Mgmt)</h2>
+            <div class="page-content">
+                <!-- Based on 首页_7.html -->
+                <button class="btn-primary">上传模版</button>
+                <h4>模版库</h4>
+                <div class="template-grid">
+                    <div class="template-card">
+                        <p>CI发票模版001</p>
+                        <p>分类: CI发票模版</p>
+                        <div class="actions"><a href="#">下载</a> <a href="#">编辑</a> <a href="#">删除</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
